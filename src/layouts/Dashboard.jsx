@@ -20,7 +20,7 @@ return (
             </Grid.Row>
         </Grid>
         
-        <ProductList/>
+        
         
     </div>
 );

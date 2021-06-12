@@ -1,24 +1,25 @@
 import React,{useState,useEffect} from "react";
-import { Icon, Label, Menu, Table } from 'semantic-ui-react'
+import { Icon,  Menu, Table } from 'semantic-ui-react'
 import ProductService from "../services/productService";
 export default function ProductList() {
 
   const [products, setProducts] = useState([])
 
+
   useEffect(()=>{
     let productService = new ProductService()
     productService.getProducts().then(result=>setProducts(result.data.data))
-  })
+  },[])
   return (
     <div>
       <Table celled>
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>Urun adi</Table.HeaderCell>
-            <Table.HeaderCell>Birim Fiyati</Table.HeaderCell>
-            <Table.HeaderCell>Stok Adeti</Table.HeaderCell>
-            <Table.HeaderCell>Aciklama</Table.HeaderCell>
-            <Table.HeaderCell>Kategori</Table.HeaderCell>
+            <Table.HeaderCell>Product Name</Table.HeaderCell>
+            <Table.HeaderCell>Unit Price</Table.HeaderCell>
+            <Table.HeaderCell>Units In Stock</Table.HeaderCell>
+            <Table.HeaderCell>Quantity-Per-Unit</Table.HeaderCell>
+            <Table.HeaderCell>Category</Table.HeaderCell>
             
           </Table.Row>
         </Table.Header>
