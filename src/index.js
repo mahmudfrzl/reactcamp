@@ -9,7 +9,7 @@ import { configureStore } from './store/configureStore';
 import "react-toastify/dist/ReactToastify.min.css"
 const store = configureStore()
 ReactDOM.render(
-    <Provider store={configureStore()}>
+    <Provider store={store}>
 <BrowserRouter> 
 <App />
 </BrowserRouter>
